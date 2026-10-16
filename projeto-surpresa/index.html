@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Meu Amor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <audio id="meuAudio">
+        <source src="musica.mp3" type="audio/mpeg">
+    </audio>
+
+    <button class="btn-mensagem" id="meuBotao" onclick="iniciar()">
+        Você recebeu uma mensagem do seu namorado
+    </button>
+
+    <div class="foto-container" id="galeria">
+        <img src="foto1.jpg" class="ativa">
+        <img src="foto2.jpg">
+        <img src="foto3.jpg">
+        <img src="foto4.jpg">
+        <img src="foto5.jpg">
+        <img src="foto6.jpg">
+        <img src="foto7.jpg">
+        <img src="foto8.jpg">
+        <img src="foto9.jpg">
+        <img src="foto10.jpg">
+        <img src="foto11.jpg">
+        <img src="foto12.jpg">
+        <img src="foto13.jpg">
+        <img src="foto14.jpg">
+    </div>
+
+    <div id="container-baloes">
+        <div id="balao-1" class="balao-memoria b-esquerda" style="opacity: 0;">
+            <div class="foto-balao"><img src="balao1.jpg"></div>
+            <div class="texto-balao" id="texto-balao-1"></div>
+        </div>
+
+        <div id="balao-2" class="balao-memoria b-meio" style="opacity: 0;">
+            <div class="foto-balao"><img src="balao2.jpg"></div>
+            <div class="texto-balao" id="texto-balao-2"></div>
+        </div>
+
+        <div id="balao-3" class="balao-memoria b-inferior" style="opacity: 0;">
+            <div class="foto-balao"><img src="balao3.jpg"></div>
+            <div class="texto-balao" id="texto-balao-3"></div>
+        </div>
+
+        <!-- Balão 14 - mesmo formato dos balões 1, 2 e 3, porém centralizado -->
+        <div id="balao-especial" class="balao-memoria b-centro" style="opacity: 0;">
+            <div class="foto-balao"><img src="central.jpg"></div>
+            <div class="texto-balao" id="texto-balao-central"></div>
+        </div>
+
+        <!-- Molduras com fotos (aparecem em ordem 1 a 13) -->
+        <div id="container-molduras">
+            <div class="moldura m-pos-1" id="moldura-1"><img src="m1.jpg" alt=""></div>
+            <div class="moldura m-pos-2" id="moldura-2"><img src="m2.jpg" alt=""></div>
+            <div class="moldura m-pos-3" id="moldura-3"><img src="m3.jpg" alt=""></div>
+            <div class="moldura m-pos-4" id="moldura-4"><img src="m4.jpg" alt=""></div>
+            <div class="moldura m-pos-5" id="moldura-5"><img src="m5.jpg" alt=""></div>
+            <div class="moldura m-pos-6" id="moldura-6"><img src="m6.jpg" alt=""></div>
+            <div class="moldura m-pos-7" id="moldura-7"><img src="m7.jpg" alt=""></div>
+            <div class="moldura m-pos-8" id="moldura-8"><img src="m8.jpg" alt=""></div>
+            <div class="moldura m-pos-9" id="moldura-9"><img src="m9.jpg" alt=""></div>
+            <div class="moldura m-pos-10" id="moldura-10"><img src="m10.jpg" alt=""></div>
+            <div class="moldura m-pos-11" id="moldura-11"><img src="m11.jpg" alt=""></div>
+            <div class="moldura m-pos-12" id="moldura-12"><img src="m12.jpg" alt=""></div>
+            <div class="moldura m-pos-13" id="moldura-13"><img src="m13.jpg" alt=""></div>
+        </div>
+    </div>
+
+    <div class="coracao-container" id="coracoes">
+        <svg class="coracao-svg c1" viewBox="0 0 32 32"><path d="M16 28.5L14.5 27.1C9.1 22.2 5.5 19 5.5 15C5.5 11.7 8.1 9.1 11.5 9.1C13.4 9.1 15.2 10 16 11.4C16.8 10 18.6 9.1 20.5 9.1C23.9 9.1 26.5 11.7 26.5 15C26.5 19 22.9 22.2 17.5 27.1L16 28.5Z" /></svg>
+        <svg class="coracao-svg c2" viewBox="0 0 32 32"><path d="M16 28.5L14.5 27.1C9.1 22.2 5.5 19 5.5 15C5.5 11.7 8.1 9.1 11.5 9.1C13.4 9.1 15.2 10 16 11.4C16.8 10 18.6 9.1 20.5 9.1C23.9 9.1 26.5 11.7 26.5 15C26.5 19 22.9 22.2 17.5 27.1L16 28.5Z" /></svg>
+        <svg class="coracao-svg c3" viewBox="0 0 32 32"><path d="M16 28.5L14.5 27.1C9.1 22.2 5.5 19 5.5 15C5.5 11.7 8.1 9.1 11.5 9.1C13.4 9.1 15.2 10 16 11.4C16.8 10 18.6 9.1 20.5 9.1C23.9 9.1 26.5 11.7 26.5 15C26.5 19 22.9 22.2 17.5 27.1L16 28.5Z" /></svg>
+        <svg class="coracao-svg c4" viewBox="0 0 32 32"><path d="M16 28.5L14.5 27.1C9.1 22.2 5.5 19 5.5 15C5.5 11.7 8.1 9.1 11.5 9.1C13.4 9.1 15.2 10 16 11.4C16.8 10 18.6 9.1 20.5 9.1C23.9 9.1 26.5 11.7 26.5 15C26.5 19 22.9 22.2 17.5 27.1L16 28.5Z" /></svg>
+    </div>
+
+    <div id="legenda-area"></div>
+    <div id="pagina2"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
